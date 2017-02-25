@@ -1,0 +1,18 @@
+version:
+      0.1.{build}
+
+image:
+      Visual Studio 2015
+
+platform:
+      - Any CPU
+
+configuration:
+      - Release
+
+before_build:
+     - nuget restore
+
+build:
+      verbosity: minimal
+      parallel: true
