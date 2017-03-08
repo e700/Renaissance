@@ -4,7 +4,7 @@ solution: "./Renaissance/Renaissance.sln"
 
 install:
   - sudo apt-get install -y gtk-sharp2
-  - nuget restore solution-name.sln
+  - nuget restore /Renaissance/Renaissance.sln
 
 script:
   - xbuild ./Renaissance/Renaissance.sln
