@@ -21,10 +21,6 @@ namespace Renaissance.Core
                         context.Users.Add(new User() { UserName = Context.User.Identity.Name });
                         await context.SaveChangesAsync();
                     }
-                    else
-                    {
-                        await Task.WhenAll(user.Rooms.Select(room => Task.Run(() => Groups.Add(Context.ConnectionId, room.RoomName))));
-                    }
                 }
                 await base.OnConnected();
             }
@@ -85,7 +81,7 @@ namespace Renaissance.Core
             {
                 using (var context = new UserContext())
                 {
-                    var user = context.Users.SingleOrDefault(u => u.UserName == Context.User.Identity.Name);
+                    var user = context.Users.Find(Context.User.Identity.Name);
                     if (user != null)
                     {
                         var advert = new Advert() { User = user, Whom = whom, Text = text };
