@@ -7,4 +7,4 @@ install:
   - nuget restore Renaissance.sln
 
 script:
-  - xbuild Renaissance.sln
+  - xbuild /p:Configuration=Release Renaissance.sln
