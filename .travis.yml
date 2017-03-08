@@ -1,10 +1,10 @@
 language: csharp
 
-solution: "./Renaissance/Renaissance.sln"
+solution: "Renaissance.sln"
 
 install:
   - sudo apt-get install -y gtk-sharp2
-  - nuget restore /Renaissance/Renaissance.sln
+  - nuget restore Renaissance.sln
 
 script:
-  - xbuild ./Renaissance/Renaissance.sln
+  - xbuild Renaissance.sln
